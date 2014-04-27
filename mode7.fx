@@ -19,8 +19,6 @@ uniform highp float single_image;
 
 void main(void)
 {
-	vec4 front = texture2D(samplerFront, vTex);
-
     float px = vTex.x-0.5;
     float py = vTex.y-0.5 - horizon - fov;
     float pz = vTex.y-0.5 - horizon;
