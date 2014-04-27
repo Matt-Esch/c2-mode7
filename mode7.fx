@@ -41,5 +41,6 @@ void main(void)
         yy=clamp(yy, 0.0, 1.0/scale_y);
     }
 
-    gl_FragColor = texture2D(samplerFront, vec2(mod(xx * scale_x, 1.0), mod(yy * scale_y, 1.0)));
+    gl_FragColor = texture2D(samplerFront,
+        vec2(clamp(xx * scale_x, 0.0, 1.0), clamp(yy * scale_y, 0.0, 1.0)));
 }
