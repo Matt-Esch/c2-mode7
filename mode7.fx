@@ -14,7 +14,6 @@ uniform highp float horizon;
 uniform highp float fov;
 uniform highp float scale_x;
 uniform highp float scale_y;
-uniform highp float single_image;
 
 
 void main(void)
@@ -32,11 +31,6 @@ void main(void)
 
     float xx = sx * cos_ang - sy * sin_ang + pos_y;
     float yy = sx * sin_ang + sy * cos_ang - pos_x;
-
-    if (single_image == 1.0) {
-        xx=clamp(xx, 0.0, 1.0/scale_x);
-        yy=clamp(yy, 0.0, 1.0/scale_y);
-    }
 
     float tx = xx * scale_x;
     float ty = yy * scale_y;
