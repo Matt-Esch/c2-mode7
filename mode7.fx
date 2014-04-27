@@ -33,12 +33,17 @@ void main(void)
     float xx = sx * cos_ang - sy * sin_ang + pos_y;
     float yy = sx * sin_ang + sy * cos_ang - pos_x;
 
-    if(single_image == 1.0)
-    {
+    if (single_image == 1.0) {
         xx=clamp(xx, 0.0, 1.0/scale_x);
         yy=clamp(yy, 0.0, 1.0/scale_y);
     }
 
-    gl_FragColor = texture2D(samplerFront,
-        vec2(clamp(xx * scale_x, 0.0, 1.0), clamp(yy * scale_y, 0.0, 1.0)));
+    float tx = xx * scale_x;
+    float ty = yy * scale_y;
+
+    if (tx > 1.0 || tx < 0.0 || ty > 1.0 || ty < 0.0) {
+        gl_FragColor = vec4(0.0,0.0,0.0,0.0);
+    } else {
+        gl_FragColor = texture2D(samplerFront, vec2(tx, ty));
+    }
 }
