@@ -29,11 +29,11 @@ void main(void)
     float sin_ang = sin(radians(ang));
     float cos_ang = cos(radians(ang));
 
-    float xx = sx * cos_ang - sy * sin_ang + pos_y;
-    float yy = sx * sin_ang + sy * cos_ang + pos_x;
+    float xx = sx * cos_ang - sy * sin_ang;
+    float yy = - sx * sin_ang - sy * cos_ang;
 
-    float tx = xx * scale_x;
-    float ty = yy * scale_y;
+    float tx = xx * scale_x + pos_y;
+    float ty = yy * scale_y + pos_x;
 
     if (tx > 1.0 || tx < 0.0 || ty > 1.0 || ty < 0.0) {
         gl_FragColor = vec4(0.0,0.0,0.0,0.0);

@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <c2effect>
     <!-- About -->
-    <id>eschmode7</id>            <!-- Never change the ID.  Change the name instead -->
-    <name>eschmode7</name>
+    <id>mode7</id>            <!-- Never change the ID.  Change the name instead -->
+    <name>mode7</name>
     <category>Color</category>
     <description>Renders a mode7 surface</description>
-    <author>Matt Esch</author>
+    <author>R0J0Hound</author>
 
     <!-- Settings -->
 
