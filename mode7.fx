@@ -30,7 +30,7 @@ void main(void)
     float cos_ang = cos(radians(ang));
 
     float xx = sx * cos_ang - sy * sin_ang + pos_y;
-    float yy = sx * sin_ang + sy * cos_ang - pos_x;
+    float yy = sx * sin_ang + sy * cos_ang + pos_x;
 
     float tx = xx * scale_x;
     float ty = yy * scale_y;
